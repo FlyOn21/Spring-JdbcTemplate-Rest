@@ -76,7 +76,11 @@ public class CustomerService {
 
 
     public ResponseEntity<ResponseTemplate<Customer>> fetchById(String id) {
+
         HandlerExceptions<Customer> handlerExceptions = new HandlerExceptions<>();
+        if (id == null) {
+            return handlerExceptions.handleBadRequest("Get customer by id");
+        }
         Validator<EValidateQuery> validator = new Validator<>();
         ValidateAnswer validationAnswer = validator.validate(id, EValidateQuery.ID);
         if (!validationAnswer.isValid()) {
@@ -96,6 +100,9 @@ public class CustomerService {
 
     public ResponseEntity<ResponseTemplate<Customer>> update(String id, BodyForValidate input) {
         HandlerExceptions<Customer> handlerExceptions = new HandlerExceptions<>();
+        if (id == null) {
+            return handlerExceptions.handleBadRequest("Get customer by id");
+        }
         Validator<EValidateQuery> validator = new Validator<>();
         ValidateAnswer validationAnswer = validator.validate(id, EValidateQuery.ID);
         if (!validationAnswer.isValid()) {
@@ -131,6 +138,9 @@ public class CustomerService {
 
     public ResponseEntity<ResponseTemplate<Customer>> delete(String id) {
         HandlerExceptions<Customer> handlerExceptions = new HandlerExceptions<>();
+        if (id == null) {
+            return handlerExceptions.handleBadRequest("Get customer by id");
+        }
         Validator<EValidateQuery> validator = new Validator<>();
         ValidateAnswer validationAnswer = validator.validate(id, EValidateQuery.ID);
         if (!validationAnswer.isValid()) {

@@ -32,4 +32,11 @@ public class HandlerExceptions<T> {
         return ResponseEntity.status(HttpStatus.CONFLICT)
                 .body(new ResponseTemplate<>(false, VALIDATION_FAILED, null, errors));
     }
+
+    public ResponseEntity<ResponseTemplate<T>> handleBadRequest(String operation) {
+        SERVICE_LOGGER.error("Bad request: {}", operation);
+        CONSOLE_LOGGER.error("Bad request: {}", operation);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(new ResponseTemplate<>(false, "Id is required", null, List.of("Id is required")));
+    }
 }

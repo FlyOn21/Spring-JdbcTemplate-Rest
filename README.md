@@ -46,6 +46,7 @@ This endpoint retrieves one customer with specific id from the system.
 
 **Response:**
 - `200 OK`: Successfully retrieved all customer.
+- `400 Bad Request`: Failed to retrieve data due to bad request.
 - `404 Not Found`: Failed to retrieve data due to not found.
 - `500 Internal Server Error`: Failed to retrieve customer data due to an internal server error.
 
@@ -93,6 +94,7 @@ This endpoint update exists user in the system.
 
 **Response:**
 - `202 Accepted`: Successfully update customer.
+- `400 Bad Request`: Failed to update customer due to bad request.
 - `409 Conflict`: Failed to update customer due to conflict.
 - `404 Not Found`: Failed to update customer due to not found.
 - `500 Internal Server Error`: Failed to update due to an internal server error.
@@ -109,6 +111,7 @@ This endpoint delete exists customer in the system.
 
 **Response:**
 - `200 OK`: Successfully delete user.
+- `400 Bad Request`: Failed to delete customer due to bad request.
 - `409 Conflict`: Failed to delete customer due to conflict.
 - `404 Not Found`: Failed to delete customer due to not found.
 - `500 Internal Server Error`: Failed to delete due to an internal server error.

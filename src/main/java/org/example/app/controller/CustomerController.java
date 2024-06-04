@@ -28,17 +28,17 @@ public class CustomerController {
     }
 
     @GetMapping("customers/specific")
-    public ResponseEntity<ResponseTemplate<Customer>> fetchUserById(@RequestParam("id") String id) {
+    public ResponseEntity<ResponseTemplate<Customer>> fetchUserById(@RequestParam(value = "id", required = false) String id) {
         return customerService.fetchById(id);
     }
 
     @PutMapping("customers/specific")
-    public ResponseEntity<ResponseTemplate<Customer>> updateCustomer(@RequestParam("id") String id, @RequestBody BodyForValidate input) {
+    public ResponseEntity<ResponseTemplate<Customer>> updateCustomer(@RequestParam(value = "id", required = false) String id, @RequestBody BodyForValidate input) {
             return customerService.update(id, input);
     }
 
     @DeleteMapping("customers/specific")
-    public ResponseEntity<ResponseTemplate<Customer>> delete(@RequestParam("id") String id) {
+    public ResponseEntity<ResponseTemplate<Customer>> delete(@RequestParam(value = "id", required = false) String id) {
         return customerService.delete(id);
     }
 }

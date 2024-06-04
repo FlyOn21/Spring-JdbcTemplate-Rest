@@ -87,7 +87,7 @@ This endpoint update exists user in the system.
     "firstName": "optional, string. Customer first name",
     "lastName": "optional, string. Customer last name",
     "email": "optional, string. Customer email",
-    "phone": "optional, string. Customer phone number. E.164 format"
+    "phoneNumber": "optional, string. Customer phone number. E.164 format"
 }
 ```
 

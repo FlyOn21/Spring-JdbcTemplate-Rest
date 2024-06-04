@@ -35,7 +35,6 @@ public class CustomerService {
             LogManager.getLogger("console_logger");
 
     private static final String CUSTOMER_NOT_FOUND = "Customer not found";
-    private static final String CUSTOMER_SUCCESS = "Customer success";
 
 
     public ResponseEntity<ResponseTemplate<Customer>> create(BodyForValidate input) {
@@ -87,7 +86,7 @@ public class CustomerService {
             Long idLong = Long.parseLong(id);
             Optional<Customer> optional = repository.getById(idLong);
             return optional.map(customer ->
-                    ResponseEntity.ok(new ResponseTemplate<>(true, CUSTOMER_SUCCESS, customer, Collections.emptyList())))
+                    ResponseEntity.ok(new ResponseTemplate<>(true, "Customer get success", customer, Collections.emptyList())))
                     .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body(new ResponseTemplate<>(false, CUSTOMER_NOT_FOUND, null, List.of(CUSTOMER_NOT_FOUND))));
         } catch (DataAccessException e) {
@@ -126,7 +125,7 @@ public class CustomerService {
             return ResponseEntity.status(HttpStatus.ACCEPTED).body(new ResponseTemplate<>(true, "Update customer success", customer, Collections.emptyList()));
 
         } catch (DataAccessException | CRUDException e) {
-            return handlerExceptions.handleException("update customer", e);
+            return handlerExceptions.handleException("Update customer", e);
         }
     }
 

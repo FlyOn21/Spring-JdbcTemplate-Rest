@@ -6,3 +6,5 @@ MYSQL_HOST=<db host>
 MYSQL_HOST_PORT=<db port>
 MYSQL_USER=<db user>
 MYSQL_PASSWORD=<db password>
+MYSQL_JDBC_DRIVER=com.mysql.cj.jdbc.Driver
+MYSQL_JDBC_URL_PREFIX=jdbc:mysql://

@@ -1,0 +1,8 @@
+# Application settings
+#----------------------------
+# Database settings
+MYSQL_DATABASE=<db name>
+MYSQL_HOST=<db host>
+MYSQL_HOST_PORT=<db port>
+MYSQL_USER=<db user>
+MYSQL_PASSWORD=<db password>

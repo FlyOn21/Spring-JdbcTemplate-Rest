@@ -71,7 +71,7 @@ This endpoint creates a new customer in the system.
 - `409 Conflict`: Failed to create customer due to conflict.
 - `500 Internal Server Error`: Failed to create customer due to an internal server error.
 
-### Update User
+### Update Customer
 
 **Endpoint:** PUT `http://<your_host>:<your_port>/api/v1/customers/specific?id=<customer_id>`
 
@@ -97,7 +97,7 @@ This endpoint update exists user in the system.
 - `404 Not Found`: Failed to update customer due to not found.
 - `500 Internal Server Error`: Failed to update due to an internal server error.
 
-### Delete User
+### Delete Customer
 
 **Endpoint:** DELETE `http://<your_host>:<your_port>/api/v1/customers/specific?id=<customer_id>`
 
